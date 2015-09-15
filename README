@@ -1,0 +1,6 @@
+./runmv pour demarrer le simulateur (à adapter)
+./send  pour nettoyer + compiler + envoyer sur device
+./sendmv  pour nettoyer + compiler + envoyer sur émulateur
+
+Log:
+adb logcat -s TAG 

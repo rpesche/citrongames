@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:focusableInTouchMode="true"
+	android:background="#FFFFFF"
+	>
+
+	<com.citron.games.RevengeView
+		android:id="@+id/graphicView"
+		android:layout_height="0dp"
+		android:layout_width="0dp"
+		/>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:focusableInTouchMode="true"
+		android:padding ="20dp"
+	>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:descendantFocusability="beforeDescendants"
+			>
+			
+			<ImageView    
+				android:id="@+id/icon"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+			/>	
+
+			<TextView
+				android:id="@+id/name"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:layout_alignParentTop="true"    
+				android:textSize="22sp"
+				/>
+		</LinearLayout>
+		
+		<TextView
+			android:id="@+id/points"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:textSize="22sp"
+			android:gravity="center"
+			android:textColor="@android:color/black"
+			/>
+
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			>
+
+			<ImageView    
+				android:id="@+id/friendIcon"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+			/>	
+
+			<TextView
+				android:id="@+id/friendname"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:layout_alignParentTop="true"    
+				android:textSize="22sp"
+			/>
+		</LinearLayout>
+		<TextView
+			android:id="@+id/friendPoints"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:textSize="22sp"
+			android:gravity="center"
+			android:textColor="@android:color/black"
+			/>
+
+		<Button
+			android:id="@+id/chancesBtn"
+			android:layout_marginTop="130dp"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:textSize="20sp"
+			android:text="What can I play?"
+			android:textColor="#FFFFFF"
+			android:background="@drawable/button_background"
+		/>
+
+	</LinearLayout>
+</LinearLayout>
+

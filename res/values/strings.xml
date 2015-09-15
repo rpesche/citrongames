@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Citron Games</string>
+
+	<string name="titlePrefs"> Username </string> 
+	<string name="titleApiRoot"> Username </string> 
+	<string name="summaryRoot"> Username </string> 
+
+
+
+	<string name="titleUsername"> Username </string> 
+  <string name="summaryUsername"> Summary Username </string> 
+
+  <string name="titlePassword"> Password </string> 
+  <string name="summaryPassword"> Summary Password </string> 
+
+  <string name="connectionTitle">Connection</string>
+  <string name="editPseudoHint">Votre Pseudo</string>
+  <string name="connectionBtnTxt">Connection</string>
+
+	<string name="usersTitle">Menu</string>	
+	<string name="usersListBtnTxt">Users</string>
+	<string name="gamesListBtnTxt">Games</string>
+	<string name="friendsListBtnTxt">Friends</string>
+
+	<string name="acceptBtnTxt">Accept</string>
+	<string name="refuseBtnTxt">Refuse</string>
+
+	<string name="abortBtnTxt">Abort</string>
+</resources>

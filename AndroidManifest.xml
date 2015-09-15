@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.citron.games"
+  android:versionCode="1"
+  android:versionName="1.0">
+	<application android:label="@string/app_name" android:icon="@drawable/citron" android:name=".CitronApplication">
+		<activity android:name=".ConnectionActivity" android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar" > 
+			<intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".UsersListActivity" android:label="@string/usersTitle" android:theme="@android:style/Theme.NoTitleBar" />
+		<activity android:name=".GamesListActivity" android:label="@string/usersTitle" android:theme="@android:style/Theme.NoTitleBar" />
+		<activity android:name=".ToInvitActivity" android:label="@string/usersTitle" android:theme="@android:style/Theme.NoTitleBar"  />
+		<activity android:name=".BeInvitedActivity" android:theme="@android:style/Theme.NoTitleBar" />
+		<activity android:name=".RevengeActivity" android:theme="@android:style/Theme.NoTitleBar" />
+		<activity android:name=".ScoreActivity" android:theme="@android:style/Theme.NoTitleBar" />
+    <activity android:name=".PrefsActivity" android:label="@string/titlePrefs"/>
+ 
+	</application>
+
+	<uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

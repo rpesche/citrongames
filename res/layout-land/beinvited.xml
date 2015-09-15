@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	weightSum="1.0"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:descendantFocusability="beforeDescendants"
+	android:focusableInTouchMode="true"
+	android:weightSum="1"
+	android:background="#FFFFFF"
+	>
+
+	<TextView
+		android:id="@+id/friend"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.5"
+		android:layout_alignParentTop="true"    
+		android:textSize="22sp"
+		android:gravity="center"
+		android:text="Friend"
+		android:background="@android:color/transparent"
+		/>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.4"
+		android:background="@android:color/transparent"
+		>
+	</LinearLayout>
+
+
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/listHead"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.1"
+		android:weightSum="1"
+		android:background="#00F000"
+		>	
+
+		<Button
+			android:id="@+id/acceptBtn"
+			android:layout_height="fill_parent"
+			android:layout_width="0dp"
+			android:layout_weight="0.5"
+			android:textSize="20sp"
+			android:text="@string/acceptBtnTxt"
+			android:textColor="#FFFFFF"
+			android:background="@drawable/button_background"
+		/>
+
+		<Button
+			android:id="@+id/refuseBtn"
+			android:layout_height="fill_parent"
+			android:layout_width="0dp"
+			android:layout_weight="0.5"
+			android:textSize="20sp"
+			android:text="@string/refuseBtnTxt"
+			android:textColor="#FFFFFF"
+			android:background="@drawable/button_background"
+		/>
+	</LinearLayout>
+</LinearLayout>
+
+
+
+
+
+

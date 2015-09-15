@@ -1,0 +1,4 @@
+ant clean
+ant debug
+adb -e install -r bin/citronGames-debug.apk
+#adb -d install -r bin/citronGames-debug.apk

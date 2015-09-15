@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	weightSum="1.0"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:descendantFocusability="beforeDescendants"
+	android:focusableInTouchMode="true"
+	android:weightSum="1"
+	android:background="#FFFFFF"
+	>
+
+  <TextView
+		android:id="@+id/name"
+    android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.05"
+    android:layout_alignParentTop="true"    
+		android:textSize="22sp"
+		android:gravity="center"
+		android:text="Name"
+		android:background="#343434"
+		/>
+
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/listHead"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.1"
+		android:weightSum="0.9"
+		>	
+		<Button
+			android:id="@+id/usersListBtn"
+			android:layout_height="fill_parent"
+			android:layout_width="0dp"
+			android:layout_weight="0.3"
+			android:textSize="20sp"
+			android:background="@drawable/button_background"
+			android:text="@string/usersListBtnTxt"
+			android:textColor="#FFFFFF"
+			/>
+
+		<Button
+			android:id="@+id/gamesListBtn"
+			android:layout_height="fill_parent"
+			android:layout_width="0dp"
+			android:layout_weight="0.3"
+			android:textSize="20sp"
+			android:text="@string/gamesListBtnTxt"
+			android:textColor="#FFFFFF"
+			android:background="@drawable/pressed_button"
+			/>
+
+		<Button
+			android:id="@+id/friendsListBtn"
+			android:layout_height="fill_parent"
+			android:layout_width="0dp"
+			android:layout_weight="0.3"
+			android:textSize="20sp"
+			android:text="@string/friendsListBtnTxt"
+			android:textColor="#FFFFFF"
+			android:background="@drawable/button_background"
+			/>
+	</LinearLayout>
+
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:background="@drawable/background"
+    android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.85"
+		>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/listHead"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:weightSum="1.0"
+		>	
+			<ListView 
+				android:id="@+id/ListView01"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:divider="@null"
+				android:cacheColorHint="#00000000"
+			>
+			</ListView>
+
+		</LinearLayout>	
+
+	</LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
+

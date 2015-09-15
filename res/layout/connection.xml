@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	weightSum="1.0"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:descendantFocusability="beforeDescendants"
+	android:focusableInTouchMode="true"
+	android:background="#FFFFFF"
+	android:weightSum ="1.0"
+>
+
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/head"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.6"
+		android:background="@drawable/citron"	
+		android:gravity="center"
+		>
+	</LinearLayout>
+
+	<EditText
+		android:id="@+id/editPseudo"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.2"
+		android:gravity="center"
+		android:maxLength="20"
+		android:textStyle="italic"
+		android:hint="@string/editPseudoHint"
+		android:inputType="textPersonName"
+		/>
+
+	<Button
+		android:id="@+id/okBtn"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.2"
+		android:textSize="20sp"
+		android:text="@string/connectionBtnTxt"/> 
+
+</LinearLayout>
+
+
+
+
+
+
