@@ -33,7 +33,7 @@ public class RevengeActivity extends Activity implements OnClickListener {
 	private ImageView icon_,friendIcon_;
 	private TextView score_,friendScore_;
 
-	@Override	
+	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -59,7 +59,7 @@ public class RevengeActivity extends Activity implements OnClickListener {
 		icon_ = (ImageView)findViewById(R.id.icon);
 		friendIcon_ = (ImageView)findViewById(R.id.friendIcon);
 
-		
+
 		if(role_ == MASTER){
 			icon_.setImageResource(R.drawable.greenplayer);
 			friendIcon_.setImageResource(R.drawable.blueplayer_off);
@@ -85,12 +85,12 @@ public class RevengeActivity extends Activity implements OnClickListener {
 		//Landscape
 		if(DM.widthPixels>DM.heightPixels) {
 			params.height = DM.heightPixels ;
-			params.width = DM.heightPixels ; 
+			params.width = DM.heightPixels ;
 			revengeView_.setLayoutParams(params);
 			revengeView_.init(DM.heightPixels, role_, citronApp_, id_);
-        } 
+        }
 		//Portrait
-        else { 
+        else {
 			params.height = DM.widthPixels;
 			params.width = DM.widthPixels;
 			revengeView_.setLayoutParams(params);
@@ -141,8 +141,8 @@ public class RevengeActivity extends Activity implements OnClickListener {
 		startActivity(scoreScreen);
 		RevengeActivity.this.finish();
 	}
-	
-	@Override	
+
+	@Override
     protected void onDestroy(){
 		revengeView_.abort();
 		endGame("abort");

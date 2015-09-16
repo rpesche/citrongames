@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 
-/*Cette activité est appellée quand on séléctionne une invitation. 
+/*Cette activité est appellée quand on séléctionne une invitation.
  * Elle permet d'accepter, de refuser ou d'ignorer (bouton retour) l'invitation
  */
 
@@ -26,7 +26,7 @@ public class BeInvitedActivity extends Activity implements OnClickListener{
 	private CitronApplication citronApp_;
 	private String name_, friendName_, game_;
 
-	@Override	
+	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 
@@ -43,8 +43,8 @@ public class BeInvitedActivity extends Activity implements OnClickListener{
 		refuseBtn.setOnClickListener(this);
 
 		TextView friendView = (TextView)findViewById(R.id.friend);
-		friendView.setText(friendName_+"\nvous propose de jouer à\n"+game_); 
-        
+		friendView.setText(friendName_+"\nvous propose de jouer à\n"+game_);
+
 
 	}
 
@@ -56,7 +56,7 @@ public class BeInvitedActivity extends Activity implements OnClickListener{
 				Toast.makeText(citronApp_,"Game Aborted" , Toast.LENGTH_LONG).show();
 				BeInvitedActivity.this.finish();
 			}
-			else{			
+			else{
 				id	= connection_.insertGame(game_);
 				connection_.setId(friendName_,id);
 				connection_.deleteFriend(name_,friendName_);

@@ -45,9 +45,9 @@ public class ListsManager extends Thread {
 					citronApp_.sendBroadcast(intent);
 				}
 				try{
-					this.sleep(latenceRefresh*1000);	
+					this.sleep(latenceRefresh*1000);
 				}
-				catch (Exception e) {}		
+				catch (Exception e) {}
 			}
 		}
 	}
@@ -57,7 +57,7 @@ public class ListsManager extends Thread {
 		gamesList_.add(0,"revenge");
 	}
 
-	/*		UPDATE USERS LIST		*/	
+	/*		UPDATE USERS LIST		*/
 	private void updateUsersList(){
 		synchronized(usersList_){
 			oldUsersList_ = usersList_;
@@ -65,7 +65,7 @@ public class ListsManager extends Thread {
 		}
 	}
 
-	/*		UPDATE FRIEND LIST		*/	
+	/*		UPDATE FRIEND LIST		*/
 	private void updateFriendsList(){
 		synchronized(friendsList_){
 			oldFriendsList_ = friendsList_;

@@ -3,4 +3,4 @@
 ./sendmv  pour nettoyer + compiler + envoyer sur émulateur
 
 Log:
-adb logcat -s TAG 
+adb logcat -s TAG

@@ -16,7 +16,7 @@ public class FriendAdapter extends BaseAdapter {
 
 	public FriendAdapter(Context context, ListsManager listsManager) {
 		context_ = context;
-		listsManager_ = listsManager;	
+		listsManager_ = listsManager;
 		friendsList_ = listsManager.getFriendsList();
 	}
 
@@ -31,9 +31,9 @@ public class FriendAdapter extends BaseAdapter {
 	public long getItemId(int position) {
 		return position;
 	}
-   
+
 	public void refresh(){
-		friendsList_ = listsManager_.getFriendsList(); 
+		friendsList_ = listsManager_.getFriendsList();
 		this.notifyDataSetChanged();
     }
 
@@ -56,7 +56,7 @@ public class FriendAdapter extends BaseAdapter {
 		/*Icon*/
 		ImageView icon = (ImageView)convertView.findViewById(R.id.icon);
 		icon.setImageResource(R.drawable.blue);
-		
+
 		return(convertView);
 	}
 }

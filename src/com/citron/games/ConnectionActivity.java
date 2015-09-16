@@ -28,27 +28,27 @@ public class ConnectionActivity extends Activity implements TextWatcher, OnClick
 	private CitronApplication citronApp_;
 
 	/*motif_ signal les caractères autorisés dans le pseudo*/
-	final private String motif_= "[a-zA-Z0-9éè]*"; 
+	final private String motif_= "[a-zA-Z0-9éè]*";
 
   /** Called when the activity is first created. */
   @Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.connection);
-		editText = (EditText) findViewById(R.id.editPseudo); 
+		editText = (EditText) findViewById(R.id.editPseudo);
 		editText.requestFocus();
-		editText.addTextChangedListener(this); 
+		editText.addTextChangedListener(this);
 		updateBtn = (Button) findViewById(R.id.okBtn);
 		updateBtn.setOnClickListener(this);
 
 		citronApp_ = ((CitronApplication) this.getApplication());
-		connection_ = citronApp_.getConnection(); 
+		connection_ = citronApp_.getConnection();
 	}
 
 	/*@Override
 	public boolean onKey(View view, int keyCode, KeyEvent event) {
 		if (event.getAction() == KeyEvent.ACTION_DOWN &&	event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-		} 
+		}
 	}*/
 
   @Override
@@ -71,7 +71,7 @@ public class ConnectionActivity extends Activity implements TextWatcher, OnClick
 				editText.setText("");
 			}
 		}
-	}          
+	}
 
 
 	public void afterTextChanged(Editable statusText){
@@ -82,7 +82,7 @@ public class ConnectionActivity extends Activity implements TextWatcher, OnClick
 
 	public void onTextChanged(CharSequence charSeq, int a, int b, int c){
 	}
-	
+
 	@Override //appelé quand l'utilisateur appuie sur le bouton menu
 	public boolean onCreateOptionsMenu(Menu menu){
 	//	MenuInflater inflater = getMenuInflater();

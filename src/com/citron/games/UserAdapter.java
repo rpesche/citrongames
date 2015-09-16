@@ -17,7 +17,7 @@ public class UserAdapter extends BaseAdapter {
 
 	public UserAdapter(Context context, ListsManager listsManager) {
 		context_ = context;
-		listsManager_ = listsManager;	
+		listsManager_ = listsManager;
 		usersList_ = listsManager.getUsersList();
 	}
 
@@ -32,9 +32,9 @@ public class UserAdapter extends BaseAdapter {
 	public long getItemId(int position) {
 		return position;
 	}
-   
+
 	public void refresh(){
-		usersList_ = listsManager_.getUsersList(); 
+		usersList_ = listsManager_.getUsersList();
 		this.notifyDataSetChanged();
     }
 

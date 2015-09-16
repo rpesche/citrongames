@@ -13,7 +13,7 @@ public class ScoreActivity extends Activity{
 	private String name_, friendName_, info_;
 	private int score_, friendScore_;
 
-	@Override	
+	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		name_ = (String) getIntent().getSerializableExtra("name");
@@ -22,7 +22,7 @@ public class ScoreActivity extends Activity{
 		friendScore_ = (Integer) getIntent().getSerializableExtra("friendScore");
 		info_ = (String) getIntent().getSerializableExtra("info");
 		setContentView(R.layout.score);
-		
+
 		TextView scoreText = (TextView)findViewById(R.id.scoreText);
 		String text;
 
@@ -33,7 +33,7 @@ public class ScoreActivity extends Activity{
 
 		else if (score_ > friendScore_)
 			text = "YOU WIN!\n\nYou get "+score_+" points\n"+friendName_+" get "+friendScore_+" points\n\nYou're really da best =D";
-		else if (friendScore_ > score_)	
+		else if (friendScore_ > score_)
 			text = "YOU LOOSE\n\nYou get "+score_+" points\n"+friendName_+" get "+friendScore_+" points\n\nI don't know what to say :/";
 		else
 			text = "EX AEQUO!\n\nYou both get "+score_+" points\n\nWhat a battle! =o";
