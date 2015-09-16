@@ -2,3 +2,5 @@ bin/
 gen/
 local.properties
 project.properties
+
+*.swp
