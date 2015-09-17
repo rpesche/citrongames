@@ -50,4 +50,12 @@ public class CitronApplication extends Application implements OnSharedPreference
         //this.twitter = null;
     }
 
+
+	public int getIntField(String game, int id, String field){
+		return Integer.parseInt( connection_.getField(game, id, field));
+	}
+
+	public void setIntField(String game, int id, String field, int val) {
+		connection_.setField(game, id, field, val);
+	}
 }
