@@ -42,7 +42,6 @@ public class RevengeView extends View {
 	private int map_[][] ;
 	private ArrayList<Position> chances_ = new ArrayList<Position>();
 	private CitronApplication citronApp_;
-	private PhpConnection connection_;
 	private Position position_;
 	private boolean chanceFlag = false;
 	private boolean waiting_=true;
@@ -68,7 +67,6 @@ public class RevengeView extends View {
 		cellSize_ = screenSize/mapSize_;
 		role_ = role;
 		citronApp_=citronApp;
-		connection_ = citronApp_.getConnection();
 		id_ = id;
 		if( role_ == MASTER ){
 			double ran=Math.random();

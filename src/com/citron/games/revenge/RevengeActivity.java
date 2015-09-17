@@ -24,7 +24,6 @@ public class RevengeActivity extends Activity implements OnClickListener {
 	private final int SLAVE = 1;
 
 	private CitronApplication citronApp_;
-	private PhpConnection connection_;
 	private String name_, friendName_, game_;
 	private int id_;
 	private int role_;
@@ -45,7 +44,6 @@ public class RevengeActivity extends Activity implements OnClickListener {
 		game_ = (String) getIntent().getSerializableExtra("string3");
 
 		citronApp_ = ((CitronApplication) this.getApplication());
-		connection_ = citronApp_.getConnection();
 		name_ = citronApp_.getName();
 
 		revengeView_ = (RevengeView)findViewById(R.id.graphicView);
