@@ -33,9 +33,6 @@ public class CitronApplication extends Application implements OnSharedPreference
 	}
 
 
-	public PhpConnection getConnection(){
-		return connection_;
-	}
 
 
 	public void setListsManager(ListsManager listsManager){
