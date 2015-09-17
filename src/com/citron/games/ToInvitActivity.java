@@ -23,7 +23,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout; 
+import android.widget.LinearLayout;
 import android.util.Log;
 
 import android.os.Handler;
@@ -42,7 +42,7 @@ public class ToInvitActivity extends Activity implements OnClickListener{
 	private PhpConnection connection_;
 	private CitronApplication citronApp_;
 	private ListView list_;
-	private GameAdapter gameAdapter_;	
+	private GameAdapter gameAdapter_;
 	private int page_;// 0=users 1=games 2=friends
 	private ListsManager listsManager_;
 	private int sentFlag_ = 0;
@@ -52,7 +52,7 @@ public class ToInvitActivity extends Activity implements OnClickListener{
 	final Handler handler = new Handler();
 	private boolean run_= true;
 
-	@Override	
+	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.toinvit);
@@ -79,7 +79,7 @@ public class ToInvitActivity extends Activity implements OnClickListener{
 
 		list_.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {	
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				selection(position);
 			}
         });
@@ -89,10 +89,10 @@ public class ToInvitActivity extends Activity implements OnClickListener{
 		sentFlag_ = 1;
 		game_ = listsManager_.getGamesList().get(position);
 		findViewById(R.id.waiting).setVisibility(View.VISIBLE);
-		
+
 		connection_.insertFriend( friendName_);
 		connection_.setGame(game_);
-		connection_.setId( name_, WAITANSWER ); //WAITANSWER	
+		connection_.setId( name_, WAITANSWER ); //WAITANSWER
 
 		timer_ = new Timer();
         initializeTimerTask();

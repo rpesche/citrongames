@@ -24,7 +24,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout; 
+import android.widget.LinearLayout;
 import android.util.Log;
 
 import android.os.Handler;
@@ -40,14 +40,14 @@ public class UsersListActivity extends Activity implements OnClickListener{
 	private CitronApplication citronApp_;
 	private ListView list_;
 	private UserAdapter userAdapter_;
-	private FriendAdapter friendAdapter_;	
+	private FriendAdapter friendAdapter_;
 	private int page_;// 0=users 1=games 2=friends
 	private ListsManager listsManager_;
 
 	private TimerTask timerTask;
 	final Handler handler = new Handler();
 
-	@Override	
+	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		Log.d("TAG1", "user OnCreate" );
@@ -56,7 +56,7 @@ public class UsersListActivity extends Activity implements OnClickListener{
 		usersBtn = (Button) findViewById(R.id.usersListBtn);
 		gamesBtn = (Button) findViewById(R.id.gamesListBtn);
 		friendsBtn = (Button) findViewById(R.id.friendsListBtn);
-		
+
 		usersBtn.setOnClickListener(this);
 		gamesBtn.setOnClickListener(this);
 		friendsBtn.setOnClickListener(this);
@@ -70,21 +70,21 @@ public class UsersListActivity extends Activity implements OnClickListener{
 
 		TextView nameView = (TextView)findViewById(R.id.name);
 		nameView.setText(name_);
-		
-		
+
+
 		listsManager_ = new ListsManager(connection_, citronApp_);
 		citronApp_.setListsManager(listsManager_);
 		listsManager_.start();
 
 		userAdapter_ = new UserAdapter(this, listsManager_);
 		friendAdapter_ = new FriendAdapter(this, listsManager_);
-        
+
 		list_ = (ListView)findViewById(R.id.ListView01);
 
 		list_.setAdapter(userAdapter_);
 		list_.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {	
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				selection(position);
 			}
         });
@@ -97,7 +97,7 @@ public class UsersListActivity extends Activity implements OnClickListener{
 		if(page_ == 0){
 			friend = listsManager_.getUsersList().get(position).name_;
 			invit = listsManager_.getUsersList().get(position).friend_;
-		}	
+		}
 		else{
 			friend = listsManager_.getFriendsList().get(position);
 			invit = 1;
@@ -118,13 +118,13 @@ public class UsersListActivity extends Activity implements OnClickListener{
 		}
 	}
 
-	@Override	
+	@Override
     protected void onStart(){
 		super.onStart();
 		Log.d("TAG1", "user OnStart" );
 	}
 
-	@Override	
+	@Override
     protected void onRestart(){
 		listsManager_.restart();
 		super.onRestart();
@@ -145,14 +145,14 @@ public class UsersListActivity extends Activity implements OnClickListener{
         super.onPause();
     }
 
-	@Override	
+	@Override
     protected void onStop(){
 		listsManager_.pause();
 		super.onStop();
 		Log.d("TAG1", "user OnStop" );
 	}
 
-	@Override	
+	@Override
     protected void onDestroy(){
 	//	listsManager_.stop();
 		super.onDestroy();

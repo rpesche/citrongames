@@ -16,7 +16,7 @@ public class GameAdapter extends BaseAdapter {
 
 	public GameAdapter(Context context, ListsManager listsManager) {
 		context_ = context;
-		listsManager_ = listsManager;	
+		listsManager_ = listsManager;
 		gamesList_ = listsManager.getGamesList();
 	}
 
@@ -31,7 +31,7 @@ public class GameAdapter extends BaseAdapter {
 	public long getItemId(int position) {
 		return position;
 	}
-   
+
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if(convertView == null){
 			LayoutInflater inflater = LayoutInflater.from(context_);
@@ -47,7 +47,7 @@ public class GameAdapter extends BaseAdapter {
 
 		/*Icon*/
 		//ImageView icon = (ImageView)convertView.findViewById(R.id.icon);
-		//icon.setImageResource(R.drawable.blue);	
+		//icon.setImageResource(R.drawable.blue);
 		return(convertView);
 	}
 }

@@ -1,5 +1,5 @@
 package com.citron.games;
- 
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -23,7 +23,7 @@ public class RevengeView extends View {
 	private final int SLAVE = 1;
 	private final int EMPTY = -1;
 
-	
+
 	private final int INIT = -1;
 	private final int CANT_PLAY = -2;
 	private final int ABORT = -3;
@@ -35,7 +35,7 @@ public class RevengeView extends View {
 	private int role_, foe_;
 	private int id_;
 	private int token_;
-	private Paint paint;  
+	private Paint paint;
 	private int screenSize_;
 	private int cellSize_;
 	private Bitmap	me_, friend_, empty_, chance_;
@@ -62,7 +62,7 @@ public class RevengeView extends View {
 		chance_	= BitmapFactory.decodeResource(getResources(), R.drawable.chance);
 		map_ = newMap();
    }
- 
+
 	public void init(int screenSize, int role, CitronApplication citronApp, int id ){
 		screenSize_ = screenSize;
 		cellSize_ = screenSize/mapSize_;
@@ -120,14 +120,14 @@ public class RevengeView extends View {
 
 	private void checkToken(){
 		if(countdown_ == 0){
-			gameEnd("finished");	
+			gameEnd("finished");
 		}
 		token_ = getToken();
-		
+
 		if( token_ == ABORT ){
 			gameEnd("aborted");
 			return;
-		}	
+		}
 
 		//waiting for token
 		if(waiting_){
@@ -135,7 +135,7 @@ public class RevengeView extends View {
 			if(token_ == role_){
 				Intent intent;
 				position_ = getPosition();
-				
+
 				//friend can't play
 				if(position_.x_ == CANT_PLAY ){
 					//I couldn't play
@@ -162,11 +162,11 @@ public class RevengeView extends View {
 				else{
 					takeToken();
 					waiting_=false;
-				}	
+				}
 			}
 		}
 	}
- 
+
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		if( waiting_ )
@@ -189,17 +189,17 @@ public class RevengeView extends View {
 		for (int y = 0; y < mapSize_; y++)
 			for (int x = 0; x < mapSize_; x++)
 				map[x][y] = EMPTY;
-		map[mapSize_/2-1][mapSize_/2-1] = MASTER; 
-		map[mapSize_/2][mapSize_/2] = MASTER; 
-		map[mapSize_/2][mapSize_/2-1] = SLAVE; 
+		map[mapSize_/2-1][mapSize_/2-1] = MASTER;
+		map[mapSize_/2][mapSize_/2] = MASTER;
+		map[mapSize_/2][mapSize_/2-1] = SLAVE;
 		map[mapSize_/2-1][mapSize_/2] = SLAVE;
 		return map;
-	}	
+	}
 
-	private void drawMap(Canvas canvas){	
+	private void drawMap(Canvas canvas){
 		RectF rect = new RectF();
 		for (int y = 0; y < mapSize_; y++){
-			for (int x = 0; x < mapSize_; x++){	
+			for (int x = 0; x < mapSize_; x++){
 				rect.set( x*cellSize_ , y*cellSize_ , x*cellSize_ + cellSize_, y*cellSize_ +cellSize_);
 				canvas.drawBitmap(empty_, null, rect, paint);
 				if(map_[x][y] == role_)
@@ -214,7 +214,7 @@ public class RevengeView extends View {
 		score_=0;
 		friendScore_=0;
 		for (int y = 0; y < mapSize_; y++){
-			for (int x = 0; x < mapSize_; x++){	
+			for (int x = 0; x < mapSize_; x++){
 				if(map_[x][y] == role_)
 					score_++;
 				else if( map_[x][y] == foe_)
@@ -229,7 +229,7 @@ public class RevengeView extends View {
 
 		RectF rect = new RectF();
 		for(int i=0; i<chances_.size();i++){
-			rect.set( chances_.get(i).x_*cellSize_ , chances_.get(i).y_*cellSize_ , 
+			rect.set( chances_.get(i).x_*cellSize_ , chances_.get(i).y_*cellSize_ ,
 					chances_.get(i).x_*cellSize_ + cellSize_, chances_.get(i).y_*cellSize_ +cellSize_);
 			canvas.drawBitmap(chance_, null, rect, paint);
 		}
@@ -250,7 +250,7 @@ public class RevengeView extends View {
 	}
 
 
-	
+
 
 	private Position getPosition(){
 		int x = Integer.parseInt( connection_.getField(game_,id_,"x" ) );
@@ -259,8 +259,8 @@ public class RevengeView extends View {
 	}
 
 	private void setPosition(int x, int y){
-		connection_.setField(game_, id_, "x", x);	
-		connection_.setField(game_, id_, "y", y);	
+		connection_.setField(game_, id_, "x", x);
+		connection_.setField(game_, id_, "y", y);
 	}
 
 	private int getToken(){
@@ -351,7 +351,7 @@ public class RevengeView extends View {
 								break;
 
 						}
-					}		
+					}
 					//Right Down
 					if( x < mapSize_-1 && y <mapSize_-1 && map_[x+1][y+1] == foe){
 						for(int i=x, j=y; i<=mapSize_-1 && j<=mapSize_-1 ; i++,j++){
@@ -363,7 +363,7 @@ public class RevengeView extends View {
 								break;
 
 						}
-					}	
+					}
 					//Left Top
 					if( x > 0 && y > 0 && map_[x-1][y-1] == foe){
 						for(int i=x, j=y; i>=0 && j>=0 ; i--,j--){
@@ -394,7 +394,7 @@ public class RevengeView extends View {
 				}
 			}
 		}
-		return count;	
+		return count;
 	}
 
 
@@ -475,7 +475,7 @@ public class RevengeView extends View {
 				else if(map_[i][j] == EMPTY && i!=x)
 					break;
 			}
-		}		
+		}
 		//Right Down
 		if( x < mapSize_-1 && y <mapSize_-1 && map_[x+1][y+1] == foe){
 			for(int i=x, j=y; i<=mapSize_-1 && j<=mapSize_-1 ; i++,j++){
@@ -488,7 +488,7 @@ public class RevengeView extends View {
 				else if(map_[i][j] == EMPTY && i!=x)
 					break;
 			}
-		}	
+		}
 		//Left Top
 		if( x > 0 && y > 0 && map_[x-1][y-1] == foe){
 			for(int i=x, j=y; i>=0 && j>=0 ; i--,j--){
@@ -519,7 +519,7 @@ public class RevengeView extends View {
 			map_[x][y] = player;
 			countdown_ --;
 		}
-		return hit;	
+		return hit;
 	}
 
 

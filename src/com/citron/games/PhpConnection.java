@@ -1,6 +1,6 @@
 package com.citron.games;
 import java.io.*;
-import java.net.*; 
+import java.net.*;
 import java.util.Date;
 import java.util.ArrayList;
 import android.util.Log;
@@ -19,7 +19,7 @@ public class PhpConnection {
 	public static final boolean	SLAVE	= true;
 	/*Constantes*/
 	private final long latenceMax = 20;
-	private final long latenceRefresh=latenceMax/2;		
+	private final long latenceRefresh=latenceMax/2;
 	public static final String SERVER = "http://projetcitron.fr/Game/";
 
 	/*Attributs de la classe*/
@@ -28,7 +28,7 @@ public class PhpConnection {
 	public PhpConnection(){
 	}
 
-	public static String get(String url) throws IOException{ 
+	public static String get(String url) throws IOException{
 		String source = "";
 		URL oracle = new URL(SERVER+url);
 		URLConnection yc = oracle.openConnection();
@@ -36,7 +36,7 @@ public class PhpConnection {
 		new InputStreamReader(
 		yc.getInputStream()));
 		String inputLine;
- 
+
 		while ((inputLine = in.readLine()) != null)
 			source +=inputLine;
 		in.close();
@@ -56,7 +56,7 @@ public class PhpConnection {
 	public boolean insertUser(String name){
 		name_ = name;
 		String res="";
-		long date = (new Date().getTime())/1000;	
+		long date = (new Date().getTime())/1000;
 		try{
 			res = get("insertUser.php?name="+name+"&date="+date);
 		}
@@ -74,7 +74,7 @@ public class PhpConnection {
 	public void insertFriend(String other){
 		try{
 			get("insertFriend.php?name="+other+"&friend="+name_);
-		}	
+		}
 		catch(Exception e){}
 	}
 
@@ -85,7 +85,7 @@ public class PhpConnection {
 		try{
 			sId = get("insertGame.php?game="+game);
 		}
-		catch (Exception e) {}     
+		catch (Exception e) {}
 		return Integer.parseInt(sId);
 	}
 
@@ -99,38 +99,38 @@ public class PhpConnection {
 		ArrayList<String> usersList = new ArrayList<String>();
 		date = (new Date().getTime())/1000;
 		try{
-			s = get("getUsersList.php?name="+name_+"&date="+date+"&latenceMax="+latenceMax);	
-		}	
+			s = get("getUsersList.php?name="+name_+"&date="+date+"&latenceMax="+latenceMax);
+		}
 		catch (Exception e) {}
-		String[] tokens = s.split("[ ]");	
+		String[] tokens = s.split("[ ]");
 		for (int i = 1; i < tokens.length; i++){
 			if( !tokens[i].equals(name_) )
 				usersList.add(tokens[i]);
 		}
-		return usersList;		
+		return usersList;
 	}
 
 
-	/*				GET	FRIENDSLIST				*/		
+	/*				GET	FRIENDSLIST				*/
 		public ArrayList<String> getFriendsList(){
 			ArrayList<String> friendsList = new ArrayList<String>();
 			String s = "";
 			try{
-				s = get("getFriendsList.php?name="+name_); 
+				s = get("getFriendsList.php?name="+name_);
 			}
 			catch (Exception e) {}
-		
+
 			if(s.equals(""))
 				return friendsList;
 			s = s.replaceAll(" ","");
 			String[] tokens = s.split("[,]+");
 			for (int i = 0; i < tokens.length; i++)
 				friendsList.add( tokens[i] );
-			return friendsList;	
+			return friendsList;
 	}
 
 
-	
+
 	/*				DELETE FRIEND				*/
 	/* retire un nom de la liste "friend" d'un utilisateur*/
 	public void deleteFriend(String user, String friend){
@@ -149,7 +149,7 @@ public class PhpConnection {
 		}
 		try{
 			get("deleteFriend.php?name="+user+"&friend="+friend);
-		}	
+		}
 		catch(Exception e){}
 	}
 
@@ -161,8 +161,8 @@ public class PhpConnection {
 			get("setGame.php?name="+name_+"&game="+game);
 		}
 		catch(Exception e){}
-	}	
-	
+	}
+
 	/*				GET GAME				*/
 	/*	Renvoi le champs game du friend		*/
 	public String getGame(String friend){
@@ -181,7 +181,7 @@ public class PhpConnection {
 			get("setId.php?friend="+friend+"&id="+id);
 		}
 		catch(Exception e){}
-	}	
+	}
 
 
 	/*				GET ID				*/
@@ -211,7 +211,7 @@ public class PhpConnection {
 		try{
 			get("deleteGame.php?game="+game+"&id="+id);
 		}
-		catch (Exception e) {}     
+		catch (Exception e) {}
 	}
 
 	//#################################################################
@@ -228,14 +228,14 @@ public class PhpConnection {
 			get("setField.php?game="+game+"&id="+id+"&field="+field+"&value="+value);
 		}
 		catch(Exception e){}
-	}	
+	}
 
 	public void setField(String game, int id, String field, boolean value){
 		try{
 			get("setField.php?game="+game+"&id="+id+"&field="+field+"&value="+value);
 		}
 		catch(Exception e){}
-	}	
+	}
 
 	/*				GET FIELD				*/
 	/*	Renvoi la valeur du champ 'field' de la partie 'id' du jeu 'game'		*/
