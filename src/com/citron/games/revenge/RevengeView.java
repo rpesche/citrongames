@@ -253,22 +253,22 @@ public class RevengeView extends View {
 
 
 	private Position getPosition(){
-		int x = Integer.parseInt( connection_.getField(game_,id_,"x" ) );
-		int y = Integer.parseInt( connection_.getField(game_,id_,"y" ) );
+		int x = citronApp_.getIntField(game_, id_, "x");
+		int y = citronApp_.getIntField(game_, id_, "y");
 		return new Position(x, y);
 	}
 
 	private void setPosition(int x, int y){
-		connection_.setField(game_, id_, "x", x);
-		connection_.setField(game_, id_, "y", y);
+		citronApp_.setIntField(game_, id_, "x", x);
+		citronApp_.setIntField(game_, id_, "y", y);
 	}
 
 	private int getToken(){
-		return Integer.parseInt( connection_.getField(game_,id_,"token") );
-	}
+		return citronApp_.getIntField(game_, id_, "token");
+		}
 
 	private void setToken(){
-		connection_.setField(game_, id_, "token", token_);
+		citronApp_.setIntField(game_, id_, "token", token_);
 	}
 
 
